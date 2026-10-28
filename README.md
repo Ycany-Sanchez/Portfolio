@@ -48,13 +48,15 @@ The polling file watcher and automatic reruns keep imported project content curr
 
 ## Verify
 
+The full test suite in `tests/` is kept locally and is not tracked by Git. Run it from the original working folder:
+
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
 AppTest checks three-section navigation, footer contacts on every page, compact role/award tables, visible project images, all five skill ratings, and the absence of removed controls. It also checks that an old Contact-page selection safely returns to About. Content checks verify the approved ratings and both PSC XI awards' Central Visayas scope. AppTest is explicitly skipped if Streamlit is not installed.
 
-The GitHub Actions workflow runs the suite on Python 3.12 and 3.14. For optional browser checks, follow the commands in `tests/browser-check.cjs`.
+The GitHub Actions workflow compiles the app and smoke-checks each page on Python 3.12 and 3.14 without requiring the local test folder. For optional local browser checks, follow the commands in `tests/browser-check.cjs`.
 
 ## Package the submission
 

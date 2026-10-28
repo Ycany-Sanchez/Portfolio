@@ -11,8 +11,7 @@ def package():
     required = [ROOT / name for name in ["app.py", "portfolio.py", "requirements.txt", "README.md", "run_app.cmd", ".gitignore", ".streamlit/config.toml"]]
     required.extend(sorted((ROOT / "assets").glob("*.png")))
     required.append(ROOT / "assets/styles.css")
-    required.extend(sorted((ROOT / "tests").glob("test_*.py")))
-    required.extend([ROOT / "tests/browser-check.cjs", ROOT / ".github/workflows/check.yml", ROOT / "tools/package_submission.py"])
+    required.extend([ROOT / ".github/workflows/check.yml", ROOT / "tools/package_submission.py"])
     for file in required:
         if not file.is_file():
             raise FileNotFoundError(f"Missing submission file: {file.relative_to(ROOT)}")

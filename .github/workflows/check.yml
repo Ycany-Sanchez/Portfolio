@@ -16,4 +16,17 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install -r requirements.txt
-      - run: python -m unittest discover -s tests -v
+      - name: Compile app
+        run: python -m compileall -q app.py portfolio.py
+      - name: Check app pages
+        run: |
+          python - <<'PY'
+          from streamlit.testing.v1 import AppTest
+
+          app = AppTest.from_file("app.py", default_timeout=30).run()
+          assert not app.exception, [error.message for error in app.exception]
+          for section in app.radio(key="section").options:
+              app.radio(key="section").set_value(section).run()
+              assert not app.exception, [error.message for error in app.exception]
+          print("All app pages rendered successfully.")
+          PY
