@@ -72,9 +72,9 @@ Submission comment:
 
 ## Community Cloud deployment
 
-1. Upload the project files to [Ycany-Portfolio-Autobiography](https://github.com/Ycany-Sanchez/Ycany-Portfolio-Autobiography), including `assets/` and `.streamlit/config.toml`.
+1. Use the uploaded project in [Ycany-Sanchez/Portfolio](https://github.com/Ycany-Sanchez/Portfolio). Keep `assets/` and `.streamlit/config.toml` included when uploading future updates.
 2. Sign in at [Streamlit Community Cloud](https://share.streamlit.io) with GitHub and select **Create app**.
-3. Choose repository **Ycany-Sanchez/Ycany-Portfolio-Autobiography**, branch **main**, and entrypoint **app.py**.
+3. Choose repository **Ycany-Sanchez/Portfolio**, branch **main**, and entrypoint **app.py**.
 4. Choose **Python 3.12** in advanced settings and deploy. No API keys or secrets are needed.
 5. Check all three sections, footer contacts, role/award tables, and project photos in a private/incognito window, then submit the public **.streamlit.app** link.
 
