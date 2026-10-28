@@ -8,7 +8,7 @@ import pandas as pd
 import streamlit as st
 
 from portfolio import (
-    CERTIFICATIONS, PROFILE, PROJECTS, SKILLS, project_outcome,
+    CERTIFICATIONS, PROFILE, PROJECTS, SKILLS, biography_text, project_outcome,
 )
 
 
@@ -95,14 +95,14 @@ def render_about():
         st.write(PROFILE["intro"])
         st.button("View projects", on_click=go_to, args=("Projects",))
     with artwork:
-        st.image(str(ROOT / "assets" / "profile.png"), width=180, alt="Ycany Ashra Sanchez")
+        st.image(str(ROOT / "assets" / "profile.png"), width=180, alt=PROFILE["name"])
     st.divider()
 
     story, education, recognition = st.tabs(["About me", "Education", "Awards"])
     with story:
         text, interests = st.columns([1.7, 1], gap="large")
         with text:
-            st.markdown(PROFILE["biography"])
+            st.markdown(biography_text())
         with interests:
             st.markdown("**Interests**")
             for interest in PROFILE["interests"]:
@@ -119,6 +119,8 @@ def render_about():
         st.subheader(PROFILE["school"])
         st.write(f"{PROFILE['program_full']} · {PROFILE['education_dates']}")
         st.caption(f"Current year: {PROFILE['year']} · Section {PROFILE['section']}")
+        st.markdown("**Academic recognition**")
+        st.table(pd.DataFrame(PROFILE["academic_achievements"]), hide_index=True, border="horizontal", width="stretch", alt="Senior high honors, College Scholar tuition coverage, and Dean’s List recognition")
         st.subheader("Certifications")
         st.table(pd.DataFrame(CERTIFICATIONS).rename(columns={"name": "Certification", "issuer": "Issuer", "date": "Date"}), hide_index=True, border="horizontal", width="stretch", alt="Certifications, issuers, and completion dates")
     with recognition:

@@ -41,7 +41,7 @@ const fs = require('node:fs');
   };
   try {
     await page.goto(process.env.PORTFOLIO_URL || 'http://localhost:8501');
-    await page.getByRole('heading', { name: 'Ycany Ashra Sanchez', exact: true }).waitFor();
+    await page.getByRole('heading', { name: 'Ycany Ashra T. Sanchez', exact: true }).waitFor();
     await page.getByRole('button', { name: 'View projects', exact: true }).waitFor();
     await checkFooter();
     fs.mkdirSync('artifacts', { recursive: true });

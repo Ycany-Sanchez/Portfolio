@@ -32,7 +32,7 @@ class StreamlitAppTests(unittest.TestCase):
         ]
 
     def test_every_section_has_footer_contacts_without_removed_controls(self):
-        self.assertEqual(self.app.title[0].value, "Ycany Ashra Sanchez")
+        self.assertEqual(self.app.title[0].value, "Ycany Ashra T. Sanchez")
         for section in SECTIONS:
             with self.subTest(section=section):
                 self.navigate(section)

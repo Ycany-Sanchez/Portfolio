@@ -4,10 +4,13 @@ Sources: the owner's existing portfolio and the project READMEs linked below.
 Roles, current school details, PSC/IBPAP awards, and ratings were supplied by Ycany.
 """
 
+from datetime import date, datetime, timedelta, timezone
+
 # PERSONAL DETAILS — edit here to personalize the whole app.
 PROFILE = {
-    "name": "Ycany Ashra Sanchez",
+    "name": "Ycany Ashra T. Sanchez",
     "short_name": "Ycany",
+    "birth_date": "2006-11-02",
     "program": "BSCS",
     "program_full": "Bachelor of Science in Computer Science",
     "year": "3rd year",
@@ -18,15 +21,30 @@ PROFILE = {
     "linkedin": "https://www.linkedin.com/in/ycany-ashra-sanchez-bb987937a/",
     "intro": "Most of my project work is on the backend: building application logic, connecting APIs, and setting up automated workflows.",
     "biography": (
-        "I’m a third-year BSCS student at Cebu Institute of Technology, in section F2. "
-        "My main role in group projects is backend development.\n\n"
-        "For Team TIKI’s Parola, I contributed to the idea, backend, API integrations, "
-        "and automated workflows. For BantAI Buddy, I worked as a backend developer "
-        "and ideator on a browser extension for screening harmful messages.\n\n"
-        "I also worked on the backend of IMentia, a face-recognition application for "
-        "people with dementia and their caregivers. For FoodPantry, I handled "
-        "full-stack development on an Android app that suggests recipes from pantry ingredients."
+        "My name is Ycany Ashra T. Sanchez. I was born on November 2, 2006, "
+        "at Cebu Doctors’ Hospital, and I’m {age} years old. I currently live in "
+        "Urban Deca Homes Tisa, Building 3, Unit 415.\n\n"
+        "My parents are Sarah T. Sanchez and Yancy C. Sanchez. I have one sibling, "
+        "Khatara Carie T. Sanchez, who is two years younger than me. My first names "
+        "come from my parents’ names: “Ycany” is a rearrangement of “Yancy,” "
+        "and “Ashra” is a rearrangement of “Sarah.”\n\n"
+        "I attended senior high school at Cebu Institute of Technology – University "
+        "and graduated with honors. I’m now a third-year BSCS student in section F2 "
+        "at the same university. In my first year of college, I qualified as a "
+        "College Scholar and received a scholarship covering 25% of my tuition. "
+        "I’ve also been a consistent Dean’s Lister.\n\n"
+        "Outside school, I enjoy playing online games with my friends, playing "
+        "badminton, and watching anime. My favorite color is blue, and my favorite "
+        "food is macaroni salad.\n\n"
+        "Lately, I’ve been joining more hackathons to gain experience and build "
+        "a stronger portfolio for the future. Most of my project work involves "
+        "backend development, API integration, and workflow automation."
     ),
+    "academic_achievements": [
+        {"Recognition": "Senior high school", "Details": "Graduated with honors at CIT-U."},
+        {"Recognition": "College Scholar", "Details": "First year of college, with 25% tuition coverage."},
+        {"Recognition": "Dean’s List", "Details": "Consistent Dean’s Lister."},
+    ],
     "interests": ["Backend development", "API integration", "Applied AI", "Workflow automation"],
 }
 
@@ -136,6 +154,15 @@ PROJECTS = [
         "url": "https://github.com/Ycany-Sanchez/FoodPantry", "link_label": "Source code",
     },
 ]
+
+
+def biography_text(today=None):
+    """Keep the age current using the date in the Philippines."""
+    if today is None:
+        today = datetime.now(timezone(timedelta(hours=8))).date()
+    birthday = date.fromisoformat(PROFILE["birth_date"])
+    age = today.year - birthday.year - ((today.month, today.day) < (birthday.month, birthday.day))
+    return PROFILE["biography"].format(age=age)
 
 
 def project_outcome(project):

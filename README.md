@@ -1,4 +1,4 @@
-# Ycany Ashra Sanchez · Streamlit Portfolio
+# Ycany Ashra T. Sanchez · Streamlit Portfolio
 
 A personal portfolio for **BSCS, 3rd year, section F2**, created for **CSIT 349 · Applied AI**. Dark gray surfaces with blue accents, a personal portrait, four projects, event announcements, and five self-rated skills.
 
@@ -66,7 +66,7 @@ The ZIP is created next to the project folder. It includes the app and all four 
 
 Submission comment:
 
-> Ycany Ashra Sanchez — BSCS, 3rd year, F2
+> Ycany Ashra T. Sanchez — BSCS, 3rd year, F2
 
 ## Community Cloud deployment
 
