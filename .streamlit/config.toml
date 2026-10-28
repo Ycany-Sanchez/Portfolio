@@ -1,0 +1,14 @@
+[theme]
+base = "dark"
+primaryColor = "#78a9ed"
+backgroundColor = "#151719"
+secondaryBackgroundColor = "#1d2022"
+textColor = "#ecebe6"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+runOnSave = true
+fileWatcherType = "poll"
