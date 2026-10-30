@@ -6,7 +6,6 @@ Roles, current school details, PSC/IBPAP awards, and ratings were supplied by Yc
 
 from datetime import date, datetime, timedelta, timezone
 
-# PERSONAL DETAILS — edit here to personalize the whole app.
 PROFILE = {
     "name": "Ycany Ashra T. Sanchez",
     "short_name": "Ycany",
@@ -48,7 +47,6 @@ PROFILE = {
     "interests": ["Backend development", "API integration", "Applied AI", "Workflow automation"],
 }
 
-# SELF-ASSESSED SKILLS — the five ratings approved by the owner, on a 1–5 scale.
 SKILLS = [
     ("Backend Development", 5),
     ("AI Integration", 4),
@@ -63,7 +61,6 @@ CERTIFICATIONS = [
     {"name": "Graphic Design Essentials", "issuer": "Canva", "date": "September 2025"},
 ]
 
-# PROJECTS — keep personal roles distinct from the team's overall features.
 PROJECTS = [
     {
         "id": "parola", "name": "Parola", "category": "AI and fisheries",
@@ -102,7 +99,6 @@ PROJECTS = [
         "subtitle": "AI-assisted message screening.",
         "role": "Backend Developer · Ideator",
         "description": "A browser extension for flagging harmful messages, scams, and predatory content. It includes multilingual explanations and Gmail alerts for parents.",
-        # Exact languages/providers were not supplied. These are documented tools/capabilities.
         "tools": ["Browser Extension", "AI Integration", "Multilingual Detection", "Gmail Notifications"],
         "awards": [{"title": "Top 2", "event": "IBPAP Can You HackIt? Challenge"}],
         "story": "Developed for an inter-school hackathon in Cebu organized by IBPAP, with mentorship from Accenture professionals. The system was rebuilt from scratch on the day of the competition.",
